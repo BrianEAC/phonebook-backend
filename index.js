@@ -1,7 +1,6 @@
 const express = require('express')
 const morgan = require('morgan')
 const cors = require('cors')
-app.use(express.static('build'))
 const app = express()
 
 
@@ -13,6 +12,7 @@ morgan.token('body', function (req){
 app.use(express.json())
 app.use(morgan(':method :url :status :response-time ms - :res[content-length] :body - :req[content-length]'))
 app.use(cors())
+app.use(express.static('build'))
 
 
 date = new Date()
